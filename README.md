@@ -1,5 +1,6 @@
 
 # Three_Playground
+
 Three Playground it's building metaverse app with technology react native
 
 
@@ -13,7 +14,7 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
+# OR
 yarn dev
 ```
 
