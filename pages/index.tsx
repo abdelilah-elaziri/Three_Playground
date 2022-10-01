@@ -1,18 +1,25 @@
 import type { NextPage } from 'next';
 import { Canvas } from '@react-three/fiber';
 import AnimatedBox from '../components/animatedBox/AnimatedBox';
-import CameraOrbitControler from '../components/cameraOrbitControler/CameraOrbitControler';
+import { OrbitControls, Stats } from '@react-three/drei';
 
 
 const Home: NextPage = () => {
 
+  const testing = true;
+
   return (
     <div className='container'>
       <Canvas>
-        <CameraOrbitControler />
+        {testing ? <Stats /> : null};
+        {testing ? <axesHelper args={[2]}/> : null};
+        {testing ? <gridHelper  args={[10, 10]}/> : null};
+        
         <ambientLight intensity={0.1} />
         <directionalLight color="aqua" position={[0, 0, 5]} />
-        <AnimatedBox />
+        <AnimatedBox isTesting={testing}/>
+        <OrbitControls />
+        
       </Canvas>
     </div>
   )
